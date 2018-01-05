@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	//唯一入口文件
-	entry: __dirname + "/app/index.js",
+	//["babel-polyfill", "./app/js"]
+	entry: ["babel-polyfill", __dirname + "/app/index.js"],
 
 	output: {
 		//打包后文件存放的地方

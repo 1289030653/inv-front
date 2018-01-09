@@ -5,7 +5,7 @@ export default class ApiUsers
   {
     return fetch('http://localhost:8181/user/test', {
         method: 'GET',
-        cache: 'default'
+        cache: 'default',
       })
             .then(response => response.json())
             .then(data => data.users)

@@ -20,9 +20,10 @@ import { reducers } from './reducers/index';
 
 import AppContainer from './containers/AppContainer';
 import NotFound from './pages/NotFound';
-import LoginContainer from './pages/Login';
+import LoginContainer from './containers/LoginContainer';
+import HomeContainer from './containers/HomeContainer';
 
-const sagaMiddleware = createSagaMiddleware(sagas);
+const sagaMiddleware = createSagaMiddleware();
 
 let middleware = applyMiddleware(sagaMiddleware);
 
@@ -32,12 +33,15 @@ if (process.env.NODE_ENV !== 'production') {
 
 let store = createStore(reducers, middleware);
 
+sagaMiddleware.run(sagas);
+
 const Root = ( {store} ) => (
 	<Provider store={store}>
 	  <Router>
 	    <Switch>
-		    <Route path="/" exact component={AppContainer}/>
+		    <Route path="/" exact  component={AppContainer}/>
 		    <Route path="/login" exact component={LoginContainer}/>
+		    <Route path="/index" component={HomeContainer}/>
 		    <Route component={NotFound}/>
 		  </Switch>
 	  </Router>

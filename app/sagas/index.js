@@ -2,6 +2,7 @@ import { takeLatest } from 'redux-saga';
 import { fork } from 'redux-saga/effects';
 
 import { usersFetchList,usersAdd, usersEdit, usersDelete } from './users';
+import { userLogin, userLogout } from './authc';
 
 export function* sagas() {
   yield [
@@ -9,5 +10,7 @@ export function* sagas() {
     fork(takeLatest, 'usersAdd', usersAdd),
     fork(takeLatest, 'usersEdit', usersEdit),
     fork(takeLatest, 'usersDelete', usersDelete),
+    fork(takeLatest, 'userLogin', userLogin),
+    fork(takeLatest, 'userLogout', userLogout),
   ];
 }

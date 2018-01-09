@@ -1,4 +1,5 @@
 import React from 'react';
+import common from '../stylesheet/Common.css';
 
 import { Redirect } from 'react-router-dom'
 
@@ -7,19 +8,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Home from './Home';
 
 import Login from './Login';
-
-const styles = {
-  page: {
-    //backgroundColor: 'orange',
-    // minHeight: '100%',
-    // minWidth: '100%',
-    minHeight: 960,
-    minWidth: 1140,
-    padding: 'auto',
-    margin: 'auto',
-    textAlign: 'center',
-  }
-}
 
 class App extends React.Component {
   constructor(props) {
@@ -30,16 +18,12 @@ class App extends React.Component {
 
     const isLoggedIn = this.props.authc.isLoggedIn;
 
-    const page = isLoggedIn ? <Home /> : <Redirect to={{
-          pathname: '/login',
-        }}/>;
+    const path = isLoggedIn ? 
+      <Redirect to={{pathname: '/index',}}/> : 
+      <Redirect to={{pathname: '/login',}}/>;
 
     return (
-      <MuiThemeProvider>
-        <div style={styles.page}>
-		      { page }
-        </div>
-		  </MuiThemeProvider>
+      path
     );
   }
 };

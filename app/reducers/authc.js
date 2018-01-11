@@ -2,7 +2,7 @@ import { reducerCall } from './index';
 
 const fakeInitState = {
   isLoggedIn: true,
-  msg: '登陆成功',
+  msg: '登陆成功', 
   currentUser: {
     id: 1,
     username: 'admin',

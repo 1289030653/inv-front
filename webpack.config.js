@@ -8,6 +8,7 @@ module.exports = {
 	entry: ["babel-polyfill", __dirname + "/app/index.js"],
 
 	output: {
+		publicPath: "/",
 		//打包后文件存放的地方
 		path: __dirname + "/build",
 		//打包后输出文件的文件名
@@ -19,12 +20,12 @@ module.exports = {
 
 	//本地服务器配置信息，基于node.js构建
 	devServer: {
+		//所有的跳转都指向index.html
+    historyApiFallback: true,
 		//本地服务器加载页面所在目录
-		contentBase: "/build",
+		contentBase: __dirname + "/build",
 		//端口号
 		port: 7070,
-    //所有的跳转都指向index.html
-    historyApiFallback: true,
     //实时刷新
     inline: true,
     //热加载
@@ -40,7 +41,7 @@ module.exports = {
 		  		loader: "babel-loader",
 		  		options: {
 		  			presets: [
-		  				"env", "react"
+		  				"env", "react", "es2017"
 		  			],
 
 		  			env: {
@@ -57,7 +58,8 @@ module.exports = {
 		  					    	  }
 		  					    	]
 		  					    }
-		  					  ]
+		  					  ],
+		  					  ["syntax-object-rest-spread"]
 		  					]
 		  				}
 		  			}

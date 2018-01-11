@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 import UserInfo from './UserInfo';
 
-
 const styles = {
   navBarContainer: {
   	height: 60,
@@ -21,12 +20,6 @@ const styles = {
   	height: 60,
   	margin: 'auto',
   	float: 'left'
-  },
-  navBarMenuElement1: {
-  	height: 60,
-  	margin: 'auto',
-  	float: 'right',
-
   },
   nav: {
     display: 'inline-block',

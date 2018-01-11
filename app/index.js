@@ -19,9 +19,13 @@ import { sagas } from './sagas/index';
 import { reducers } from './reducers/index';
 
 import AppContainer from './containers/AppContainer';
-import NotFound from './pages/NotFound';
 import LoginContainer from './containers/LoginContainer';
 import HomeContainer from './containers/HomeContainer';
+
+import NotFound from './pages/NotFound';
+
+import PrivateRoute from './components/PrivateRoute';
+
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -41,7 +45,7 @@ const Root = ( {store} ) => (
 	    <Switch>
 		    <Route path="/" exact  component={AppContainer}/>
 		    <Route path="/login" exact component={LoginContainer}/>
-		    <Route path="/index" component={HomeContainer}/>
+		    <PrivateRoute isLoggedIn={store.getState().authc.isLoggedIn} path="/index" component={HomeContainer}/>
 		    <Route component={NotFound}/>
 		  </Switch>
 	  </Router>

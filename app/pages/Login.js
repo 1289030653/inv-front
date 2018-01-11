@@ -23,21 +23,18 @@ const styles = {
 
   textField: {
     marginBottom: 20,
-    //backgroundColor: 'orange'
   },
 
   form: {
   	height: 300,
   	width: 320,
   	display: 'block',
-  	//backgroundColor: 'gray'
   },
   checkbox: {
     marginBottom: 20,
     margin: 'auto',
     width: 256,
     textAlign: 'left',
-    //backgroundColor: 'orange'
   },
   button: {
     margin: 'auto',
@@ -139,7 +136,6 @@ class Login extends React.Component {
                 hintText="密&nbsp;&nbsp;&nbsp;码"
                 errorText={msg}
                 onChange={this.handlePassword}
-
               />
               <br />
     	        <Checkbox

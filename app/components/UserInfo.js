@@ -3,17 +3,7 @@ import common from '../stylesheet/Common.css';
 import FlatButton from 'material-ui/FlatButton';
 
 const styles = {
- 
-  button: {
-    margin: 'auto',
-    width: 256,
-  },
 
-  navBarMenuElement: {
-  	height: 60,
-  	margin: 'auto',
-  	float: 'left'
-  },
   navBarMenuElement1: {
   	height: 60,
   	margin: 'auto',
@@ -36,7 +26,6 @@ const styles = {
     fontSize: 16,
     fontWeight: 'normal'
   }
-
 
 }
 

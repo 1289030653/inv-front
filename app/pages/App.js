@@ -1,7 +1,7 @@
 import React from 'react';
 import common from '../stylesheet/Common.css';
 
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -19,7 +19,7 @@ class App extends React.Component {
     const isLoggedIn = this.props.authc.isLoggedIn;
 
     const path = isLoggedIn ? 
-      <Redirect to={{pathname: '/index',}}/> : 
+      <Redirect to={{pathname: '/index/page1',}}/> : 
       <Redirect to={{pathname: '/login',}}/>;
 
     return (
